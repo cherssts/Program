@@ -7,6 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="UI\AddUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Style\Common.Xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UI\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

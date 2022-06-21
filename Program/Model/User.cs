@@ -49,7 +49,55 @@ namespace Program.Model
             set { _username = value; }
         }
 
+        private string _password;
 
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+
+        private string _key;
+
+        public string Key
+        {
+            get { return _key; }
+            set { _key = value; }
+        }
+
+        private string _rfid;
+
+        public string Rfid
+        {
+            get { return _rfid; }
+            set { _rfid = value; }
+        }
+
+
+        private DateTime _dateModified;
+
+        public DateTime DateModified
+        {
+            get { return _dateModified; }
+            set { _dateModified = value; }
+        }
+
+
+        private string _comment;
+
+        public string Comment
+        {
+            get { return _comment; }
+            set { _comment = value; }
+        }
+
+        private int _isActive;
+
+        public int IsActive
+        {
+            get { return _isActive; }
+            set { _isActive = value; }
+        }
 
     }
 }
