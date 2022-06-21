@@ -33,6 +33,10 @@ namespace Program.Data
             return con;
         }
 
+        /// <summary>
+        /// Adds User to the Database
+        /// </summary>
+        /// <param name="user">Gets Same values to the class<see cref="User"/></param>
         public void AddUser(User user)
         {
             MySqlConnection con = GetConnection();
@@ -41,14 +45,14 @@ namespace Program.Data
             try
             {
                 cmd.ExecuteNonQuery();
-                con.Close();
+                
             }
             catch (MySqlException ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-
+            con.Close();
         }
 
         /// <summary>

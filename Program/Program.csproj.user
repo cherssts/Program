@@ -18,7 +18,7 @@
     <Page Update="UI\AddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\MainWindow.xaml">
+    <Page Update="UI\User_UI.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

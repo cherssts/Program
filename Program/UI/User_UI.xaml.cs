@@ -39,8 +39,7 @@ namespace Program
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            var a = new AddUser();
+            var a = new AddUser(this);
             a.ShowDialog();
         }
     }

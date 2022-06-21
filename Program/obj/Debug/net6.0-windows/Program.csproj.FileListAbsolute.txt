@@ -12,11 +12,9 @@ C:\Users\Eimyf\source\repos\Program\Program\bin\Debug\net6.0-windows\MySql.Data.
 C:\Users\Eimyf\source\repos\Program\Program\bin\Debug\net6.0-windows\Ubiety.Dns.Core.dll
 C:\Users\Eimyf\source\repos\Program\Program\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program.csproj.AssemblyReference.cache
-C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\MainWindow.g.cs
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program_MarkupCompile.cache
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program_MarkupCompile.lref
-C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\MainWindow.baml
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program.g.resources
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program.AssemblyInfoInputs.cache
@@ -33,3 +31,5 @@ C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\AddUser.
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\App.baml
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Style\Common.baml
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\User_UI.g.cs
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\User_UI.baml

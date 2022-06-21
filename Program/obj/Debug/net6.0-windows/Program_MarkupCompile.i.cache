@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Eimyf\source\repos\Program\Program\App.xaml
-31836882306
+32102176870
 
-101163697797
+101347101305
 202-252637925
-Style\Common.Xaml;UI\AddUser.xaml;UI\MainWindow.xaml;
+Style\Common.Xaml;UI\AddUser.xaml;UI\User_UI.xaml;
 
-False
+True
 

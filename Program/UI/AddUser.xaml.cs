@@ -19,7 +19,7 @@ namespace Program.UI
     /// </summary>
     public partial class AddUser : Window
     {
-        public AddUser()
+        public AddUser(MainWindow userWin)
         {
             InitializeComponent();
         }
