@@ -8,6 +8,7 @@ namespace Program.Model
 {
     public class User
     {
+        #region properties
         private int _id;
 
         public int ID
@@ -99,5 +100,24 @@ namespace Program.Model
             set { _isActive = value; }
         }
 
+#endregion
+        public User(string name, string charge, 
+            string codeUser, string username,  
+            string password,  string key,  string rfid, 
+            string comment)
+        {
+            Name = name;
+            Charge = charge;
+            CodeUser = codeUser;
+            Username = username;
+            Password = password;
+            Key = key;
+            Rfid = rfid;
+            Comment = comment;
+        }
+        public User()
+        {
+
+        }
     }
 }

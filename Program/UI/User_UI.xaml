@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Program"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="720" Width="1280" Closed="Window_Closed">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -18,7 +18,7 @@
             </Grid.RowDefinitions>
             <DataGrid x:Name="_userGrid" ItemsSource="{Binding UserTable}"  Grid.Row="1" AutoGenerateColumns="False"
                       CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="True" 
-                      CanUserResizeRows="False" CanUserSortColumns="True" Loaded="_userGrid_Loaded">
+                      CanUserResizeRows="False" CanUserSortColumns="True" Loaded="_DataLoaded" >
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path = Id}" Header="ID" Width="30"/>

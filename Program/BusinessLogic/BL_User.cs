@@ -18,9 +18,9 @@ namespace Program.BusinessLogic
         }
 
         
-        public void AddUser(InternalUser u)
+        public void AddUser(User u)
         {
-            var a = new InternalUser 
+            var a = new User() 
             {
                 Name = u.Name , 
                 Charge = u.Charge ,
@@ -46,9 +46,7 @@ namespace Program.BusinessLogic
         }
     }
 
-    public class InternalUser : User
-    {
-    }
+
 
 
 }

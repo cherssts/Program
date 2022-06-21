@@ -32,15 +32,20 @@ namespace Program
 
         }
 
-        private void _userGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            _userGrid.DataContext = user.GetUser();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var a = new AddUser(this);
             a.ShowDialog();
+        }
+
+        private void _DataLoaded(object sender, RoutedEventArgs e)
+        {
+            _userGrid.DataContext = user.GetUser();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

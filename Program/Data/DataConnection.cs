@@ -40,7 +40,7 @@ namespace Program.Data
         public void AddUser(User user)
         {
             MySqlConnection con = GetConnection();
-            string input = $"Insert into `usuario` values(null,{user.Name},{user.Charge},{user.CodeUser},{user.Username},{user.Password},{user.Key},{user.Rfid},{user.DateModified},{user.Comment},{user.IsActive})";
+            string input = $"Insert into `usuario` values(null,'{user.Name}','{user.Charge}','{user.CodeUser}','{user.Username}','{user.Password}','{user.Key}','{user.Rfid}',now(),'{user.Comment}',1)";
             MySqlCommand cmd = new MySqlCommand(input, con);
             try
             {

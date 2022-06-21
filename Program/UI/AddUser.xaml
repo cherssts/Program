@@ -8,13 +8,13 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Title="AddUser" Height="325" Width="275">
+        Title="AddUser" Height="325" Width="275" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
@@ -39,18 +39,19 @@
             <TextBlock Text="RFID" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
             <TextBlock Text="Comment" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
 
-            <TextBox  x:Name="_nameTextbox" Grid.Column="1" Grid.Row="0" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_chargeTextbox" Grid.Column="1" Grid.Row="1" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_codeTextbox" Grid.Column="1" Grid.Row="2" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_usernameTextbox" Grid.Column="1" Grid.Row="3" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_passwordTextbox" Grid.Column="1" Grid.Row="4" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_keyTextbox" Grid.Column="1" Grid.Row="5" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_rfidTextbox" Grid.Column="1" Grid.Row="6" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            <TextBox  x:Name="_commentTextbox" Grid.Column="1" Grid.Row="7" Margin="5,5" Style="{StaticResource WaterMark}" TextAlignment="Left"/>
-            
+            <TextBox  x:Name="_nameTextbox" Grid.Column="1" Grid.Row="0" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_chargeTextbox" Grid.Column="1" Grid.Row="1" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_codeTextbox" Grid.Column="1" Grid.Row="2" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_usernameTextbox" Grid.Column="1" Grid.Row="3" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_passwordTextbox" Grid.Column="1" Grid.Row="4" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_keyTextbox" Grid.Column="1" Grid.Row="5" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_rfidTextbox" Grid.Column="1" Grid.Row="6" Margin="5,5"  TextAlignment="Left"/>
+            <TextBox  x:Name="_commentTextbox" Grid.Column="1" Grid.Row="7" Margin="5,5"  TextAlignment="Left"/>
+
         </Grid>
-        <Button Grid.Row="1" Margin="100,0" Content="Add Data" />
+        <Button x:Name="AddBtn" Grid.Row="1" Margin="100,2" Content="Add Data" Click="AddBtn_Click"  />
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="26" Margin="217,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="53" Click="Button_Click"/>
     </Grid>
 
-  
+
 </Window>
