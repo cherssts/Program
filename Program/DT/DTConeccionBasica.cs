@@ -20,7 +20,6 @@ namespace Program.DT
             }
             catch (MySqlException ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             return con;

@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="UI\AddUser.xaml.cs">
+    <Compile Update="UI\UIUser\AddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,10 +15,10 @@
     <Page Update="Style\Common.Xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\AddUser.xaml">
+    <Page Update="UI\UIUser\AddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\User_UI.xaml">
+    <Page Update="UI\UIUser\User_UI.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

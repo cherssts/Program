@@ -26,10 +26,10 @@ C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\refint\Prog
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program.pdb
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Program.genruntimeconfig.cache
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\ref\Program.dll
-C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\AddUser.g.cs
-C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\AddUser.baml
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\App.baml
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\Style\Common.baml
-C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\User_UI.g.cs
-C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\User_UI.baml
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\AddUser.g.cs
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\User_UI.g.cs
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\AddUser.baml
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\User_UI.baml
