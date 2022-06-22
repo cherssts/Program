@@ -13,8 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Program.BusinessLogic;
-using Program.Data;
+using Program.BL;
+using Program.DT;
 using Program.UI;
 
 namespace Program
@@ -25,7 +25,7 @@ namespace Program
     public partial class MainWindow : Window
     {
         BL_User user = new BL_User();
-        DataConnection dc = new DataConnection();
+        DTCrudConnection dc = new DTCrudConnection();
         public MainWindow()
         {
             InitializeComponent();

@@ -4,16 +4,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Program.Data;
+using Program.DT;
 using Program.Model;
 
-namespace Program.BusinessLogic
+namespace Program.BL
 {
     public class BL_User
     {
         public DataSet GetUser()
         {
-            var _data = new DataConnection();
+            var _data = new DTCrudConnection();
             return _data.UpdateUser();
         }
 
@@ -33,7 +33,7 @@ namespace Program.BusinessLogic
                 Comment = u.Comment ,
                 IsActive = u.IsActive ,
             };
-            var Data = new DataConnection();
+            var Data = new DTCrudConnection();
             try
             {
                 Data.AddUser(a);

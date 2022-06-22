@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Program.Model;
+using Program.DT;
 
-namespace Program.Data
+namespace Program.DT
 {
-    public class DataConnection
+    public class DTCrudConnection
     {
         /// <summary>
         /// The Private Function in which will provide connection string
@@ -19,17 +20,7 @@ namespace Program.Data
         /// <returns></returns>
         private static MySqlConnection GetConnection()
         {
-            string conString = "Server=localhost;port=3306;UID=root;password=115320162abc;database=Estrella5";
-            var con = new MySqlConnection(conString);
-            try
-            {
-                con.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
+            MySqlConnection con = DTConeccionBasica.Coneccion();
             return con;
         }
 
