@@ -75,7 +75,11 @@ namespace Program
             update.KeyUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Clave"].ToString();
             update.RfidUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Numero_rfid"].ToString();
             update.CommentUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Comentario"].ToString();
-            
+            if (a.Tables["UpdateInfo"].Rows[0]["Activo"].ToString() == "True")
+                update.IsActive.IsChecked = true;
+            else
+                update.IsActive.IsChecked = false;
+            update.RoleBox.SelectedValue = a.Tables["UpdateInfo"].Rows[0]["Id_rol"].ToString();
             update.ShowDialog();
         }
 

@@ -59,8 +59,16 @@ namespace Program.UI
             }
 
             //Setting a new User for the AddUser Method
-            var user = new User(_nameTextbox.Text, _chargeTextbox.Text, _codeTextbox.Text,
-                _usernameTextbox.Text, _passwordTextbox.Text, _keyTextbox.Text, _rfidTextbox.Text, _commentTextbox.Text);
+            var user = new User();
+            user.RoleId = Convert.ToInt32(RoleBox.SelectedValue);
+            user.Name = _nameTextbox.Text;
+            user.Charge = _chargeTextbox.Text;
+            user.CodeUser = _codeTextbox.Text;
+            user.Username = _usernameTextbox.Text;
+            user.Password = _passwordTextbox.Text; 
+            user.Key =_keyTextbox.Text;
+            user.Rfid = _rfidTextbox.Text;
+            user.Comment = _commentTextbox.Text;
             //Add User
             _bl.AddUser(user);
             MessageBox.Show("User Added Successfully", "Info", MessageBoxButton.OK);
@@ -101,5 +109,13 @@ namespace Program.UI
         }
 
         #endregion
+
+        private void RoleBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            var _bl = new BLUser();
+            RoleBox.DataContext = _bl.GetRoleName();
+            RoleBox.DisplayMemberPath = _bl.GetRoleName().Tables[0].Columns["Descripcion"].ToString();
+            RoleBox.SelectedValuePath = _bl.GetRoleName().Tables[0].Columns["Id"].ToString();
+        }
     }
 }

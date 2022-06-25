@@ -11,6 +11,21 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="350"/>
         </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>
+            
+        </Grid>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -21,7 +36,7 @@
                       AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserReorderColumns="False" 
                       CanUserSortColumns="False" Loaded="_DataLoaded" 
                       Margin="10,10,5,10" HorizontalAlignment="Left" VerticalAlignment="Stretch"
-                      EnableColumnVirtualization="False"  CanUserAddRows="False">
+                      EnableColumnVirtualization="False"  CanUserAddRows="False" >
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="AliceBlue"/>
