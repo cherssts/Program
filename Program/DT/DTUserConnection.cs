@@ -31,7 +31,7 @@ namespace Program.DT
         public void AddUser(User user)
         {
             MySqlConnection con = GetConnection();
-            string input = $"Insert into `usuario` values(null,'{user.Name}','{user.Charge}','{user.CodeUser}','{user.Username}','{user.Password}','{user.Key}','{user.Rfid}',now(),'{user.Comment}',1)";
+            string input = $"Insert into `usuario` values(null,'{user.RoleId}','{user.Name}','{user.Charge}','{user.CodeUser}','{user.Username}','{user.Password}','{user.Key}','{user.Rfid}',now(),'{user.Comment}',1)";
             MySqlCommand cmd = new MySqlCommand(input, con);
             try
             {
@@ -56,7 +56,7 @@ namespace Program.DT
             DataSet ds;
             MySqlConnection con = GetConnection();
 
-            MySqlCommand cmd = new MySqlCommand("Select * From `usuario`", con);
+            MySqlCommand cmd = new MySqlCommand("Select `usuario`.* , `rol`.Descripcion from `usuario` join `rol` on `usuario`.Id_rol = `rol`.Id", con);
             ds = new DataSet();
             cmd.ExecuteNonQuery();
             var adp = new MySqlDataAdapter(cmd);
@@ -67,14 +67,20 @@ namespace Program.DT
 
         }
 
+        /// <summary>
+        /// Basically is to Update the Information 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="u"></param>
         public void UpdateUser(int id,User u)
         {
+            
             MySqlConnection con = GetConnection();
-            MySqlCommand cmd = new MySqlCommand($"Update `Usuario` Set `Nombre` = {u.Name}," +
-                                                $" `Cargo` = {u.Charge}, `Codusuario`={u.CodeUser}," +
-                                                $"`Username` = {u.Username}, `Password` = {u.Password}" +
-                                                $"`Clave` = {u.Key}, `Numero_rfid` = {u.Rfid}," +
-                                                $"`FechaModificado` = now() , `Comentario` ={u.Comment}," +
+            MySqlCommand cmd = new MySqlCommand($"Update `usuario` Set  `Id_rol` = {u.RoleId},`Nombre` = '{u.Name}'," +
+                                                $" `Cargo` = '{u.Charge}', `Codusuario`='{u.CodeUser}'," +
+                                                $"`Username` = '{u.Username}', `Password` = '{u.Password}'," +
+                                                $"`Clave` = '{u.Key}', `Numero_rfid` = '{u.Rfid}'," +
+                                                $"`FechaModificado` = now() , `Comentario` ='{u.Comment}'," +
                                                 $"`Activo` ={u.IsActive} where `Id` = {id} ", con);
             try
             {
@@ -86,6 +92,109 @@ namespace Program.DT
                 MessageBox.Show(ex.Message);
             }
             con.Close();
+        }
+
+
+
+        public void DeleteUser(int id)
+        {
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand($"Delete From `Usuario` Where id = {id}",con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+        }
+
+        public DataSet SearchName(string input)
+        {
+            DataSet ds;
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand($"Select * From `usuario` Where Nombre like '%{input}%'", con);
+            ds = new DataSet();
+            cmd.ExecuteNonQuery();
+            var adp = new MySqlDataAdapter(cmd);
+            adp.Fill(ds, "UserTable");
+            con.Close();
+            return ds;
+            
+        }
+
+        public int GetRolId(string RoleName)
+        {
+            int RoleId = 0;
+            using(MySqlConnection con = GetConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand($"Select `Id` from `rol` where Descripcion = {RoleName} limit 1",con))
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MySqlDataReader _reader = cmd.ExecuteReader();
+                        _reader.Read();
+                        RoleId = _reader.GetInt32(0);
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            return RoleId;
+        }
+
+        public DataSet GetUpdateInfo(int id)
+        {
+            DataSet ds = new DataSet();
+            using(MySqlConnection con = GetConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand($"Select `usuario`.* ,`rol`.Descripcion From `usuario` join `rol` on `usuario`.Id_rol = `rol`.Id and `usuario`.id = {id}", con))
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    con.Close();
+                    MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                    adp.Fill(ds, "UpdateInfo");
+                } 
+            }
+            return ds;
+            
+        }
+
+        public DataSet GetRoleNames()
+        {
+            var ds = new DataSet();
+            using(MySqlConnection con = GetConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand("Select `Descripcion`,`Id` from `rol`",con))
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                        adp.Fill(ds, "RoleInfo");
+
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
+                }
+            }
+            return ds;
         }
     }
 }

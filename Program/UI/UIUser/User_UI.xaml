@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="350"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
                       AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserReorderColumns="False" 
                       CanUserSortColumns="False" Loaded="_DataLoaded" 
                       Margin="10,10,5,10" HorizontalAlignment="Left" VerticalAlignment="Stretch"
-                      EnableColumnVirtualization="False" >
+                      EnableColumnVirtualization="False"  CanUserAddRows="False">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="AliceBlue"/>
@@ -39,6 +39,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path = Id}" Header="ID" Width="30"/>
                     <DataGridTextColumn Binding="{Binding Path = Nombre}" Header="Name" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Path = Descripcion}" Header="Role" Width="*"/>
                     <DataGridTextColumn Binding="{Binding Path = Cargo}" Header="Charge" Width="*"/>
                     <DataGridTextColumn Binding="{Binding Path = Codusuario}" Header="CodeUser" Width="*"/>
                     <DataGridTextColumn Binding="{Binding Path = Username}" Header="Username" Width="*"/>
@@ -50,14 +51,14 @@
                     <DataGridTemplateColumn Header="Action" Width="75">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Update" Width="75" Background="#696dd6" Foreground="White"/>
+                                <Button x:Name="UpdateBtn" Content="Update" Width="75" Background="#696dd6" Foreground="White" Click="UpdateBtnClick"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTemplateColumn Header="Action" Width="75">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Delete"/>
+                                <Button x:Name="DeleteBtn" Content="Delete" Width="75" Background="#9c4949" Click="DeleteBtnClick" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -65,6 +66,7 @@
 
             </DataGrid>
             <Button x:Name="AddUserBtn" Content="Add User" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top"  Click="AddUserBtn_Click" Height="44" Width="78"/>
+            <TextBox x:Name="SearchBox" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Width="250" Margin="0,0,10,0" TextChanged="SearchBox_TextChanged" />
         </Grid>
     </Grid>
 </Window>

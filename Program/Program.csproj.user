@@ -10,12 +10,18 @@
     <Compile Update="UI\UIUser\AddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\UIUser\UpdateUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Style\Common.Xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\UIUser\AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\UIUser\UpdateUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\UIUser\User_UI.xaml">

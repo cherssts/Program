@@ -5,8 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Program.UI.UIUser"
         mc:Ignorable="d"
-        Title="UpdateUser" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Title="UpdateUser" Height="600" Width="400" BorderBrush="DimGray" BorderThickness="1" Closing="Window_Closing">
+
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Rectangle Fill="#a3cfe3" />
+            <TextBlock Text="UPDATE" FontSize="45" FontWeight="SemiBold" FontFamily="JetBrans Mono Bold" VerticalAlignment="Bottom"/>
+            <Button x:Name="CloseWindowBtn" Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Height="16" Width="16" FontSize="7" Background="DarkGray" Foreground="Black" Click="CloseWindowBtn_Click"/>
+        </Grid>
+
+
+        <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0,1"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Text="Name" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Charge" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Code User" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Username" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Password" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Key" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="RFID" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Comment" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            <TextBlock  Text="Active" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+            
+            <TextBox Margin="1,10,10,10" x:Name="NameUptTextbox" Grid.Column="1" Grid.Row="0"/>
+            
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Margin="1,10,10,10" x:Name="ChargeUptTextbox" Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="Role" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" FontWeight="SemiBold"/>
+                <ComboBox x:Name="RoleBox" ItemsSource="{Binding RoleInfo}" DisplayMemberPath="{Binding Path= Rol_id}" SelectedValuePath="{Binding Path= Descripcion}" Margin="2,10" Grid.Column="2" Background="White" Loaded="RoleBox_Loaded" />
+            </Grid>
+            <TextBox Margin="1,10,10,10" x:Name="CodeUserUptTextbox" Grid.Column="1" Grid.Row="2"/>
+            <TextBox Margin="1,10,10,10" x:Name="UsernameUptTextbox" Grid.Column="1" Grid.Row="3"/>
+            <TextBox Margin="1,10,10,10" x:Name="PasswordUptTextbox" Grid.Column="1" Grid.Row="4"/>
+            <TextBox Margin="1,10,10,10" x:Name="KeyUptTextbox" Grid.Column="1" Grid.Row="5"/>
+            <TextBox Margin="1,10,10,10" x:Name="RfidUptTextbox" Grid.Column="1" Grid.Row="6"/>
+            <TextBox Margin="1,10,10,10" x:Name="CommentUptTextbox" Grid.Column="1" Grid.Row="7"/>
+            <CheckBox x:Name="IsActive"  Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"/>
+        </Grid>
+        <Button x:Name="UpdateBtn" Content="Update" Grid.Row="2" Margin="135,7" Click="UpdateBtnClick" />
     </Grid>
 </Window>

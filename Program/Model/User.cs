@@ -17,6 +17,15 @@ namespace Program.Model
             set { _id = value; }
         }
 
+        private int _roleId;
+
+        public int RoleId
+        {
+            get { return _roleId; }
+            set { _roleId = value; }
+        }
+
+        public string RoleName { get; set; }
 
         private string _name;
 
@@ -100,8 +109,10 @@ namespace Program.Model
             set { _isActive = value; }
         }
 
-#endregion
-        public User(string name, string charge, 
+        #endregion
+
+        #region Constructors
+        public User( string name, string charge, 
             string codeUser, string username,  
             string password,  string key,  string rfid, 
             string comment)
@@ -115,9 +126,27 @@ namespace Program.Model
             Rfid = rfid;
             Comment = comment;
         }
+        public User(int roleId,string name, string charge,
+            string codeUser, string username,
+            string password, string key, string rfid,
+            string comment, int _isActive)
+        {
+            RoleId = roleId;
+            Name = name;
+            Charge = charge;
+            CodeUser = codeUser;
+            Username = username;
+            Password = password;
+            Key = key;
+            Rfid = rfid;
+            Comment = comment;
+            IsActive = _isActive;
+        }
         public User()
         {
 
         }
+
+        #endregion
     }
 }

@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Program.BL;
 using Program.DT;
 using Program.UI;
+using Program.UI.UIUser;
 
 namespace Program
 {
@@ -33,7 +34,7 @@ namespace Program
             
         }
 
-
+        #region Local Events
         private void _DataLoaded(object sender, RoutedEventArgs e)
         {
             _userGrid.DataContext = user.GetUser();
@@ -43,12 +44,51 @@ namespace Program
         {
             Application.Current.Shutdown();
         }
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _userGrid.DataContext = user.SearchUser(SearchBox.Text);
 
+        }
+        #endregion
+
+        #region Open New Window Events
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {
             AddUser a = new AddUser(this);
             a.ShowDialog();
             
         }
+
+        private void UpdateBtnClick(object sender, RoutedEventArgs e)
+        {
+            UpdateUser update = new UpdateUser(this);
+            
+            DataRowView rowView = (DataRowView)((Button)e.Source).DataContext;
+            update.id = Convert.ToInt32(rowView[0]);
+            var a = user.UpdateInfo((int)update.id);
+            
+            update.NameUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Nombre"].ToString();
+            update.ChargeUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Cargo"].ToString();
+            update.CodeUserUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Codusuario"].ToString();
+            update.UsernameUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Username"].ToString();
+            update.PasswordUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Password"].ToString();
+            update.KeyUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Clave"].ToString();
+            update.RfidUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Numero_rfid"].ToString();
+            update.CommentUptTextbox.Text = a.Tables["UpdateInfo"].Rows[0]["Comentario"].ToString();
+            
+            update.ShowDialog();
+        }
+
+        #endregion
+
+        private void DeleteBtnClick(object sender, RoutedEventArgs e)
+        {
+            DataRowView rowView = (DataRowView)((Button)e.Source).DataContext;
+
+            user.DeleteUser(Convert.ToInt32(rowView[0]));
+            _userGrid.DataContext = user.GetUser();
+        }
+
+
     }
 }

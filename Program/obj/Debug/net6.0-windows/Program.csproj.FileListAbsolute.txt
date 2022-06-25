@@ -33,3 +33,5 @@ C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\A
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\User_UI.g.cs
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\AddUser.baml
 C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\User_UI.baml
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\UpdateUser.g.cs
+C:\Users\Eimyf\source\repos\Program\Program\obj\Debug\net6.0-windows\UI\UIUser\UpdateUser.baml
